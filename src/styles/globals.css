@@ -1,0 +1,37 @@
+:root { color-scheme: light dark; }
+body.dark { background-color:#0b1220; color:#e7ecf5; }
+
+html, body, #root {
+  height: 100%;
+}
+
+.container,
+.card {
+  height: auto;
+}
+
+.table-responsive {
+  min-height: 60vh;
+  overflow-x: auto;
+  overflow-y: visible !important;
+}
+
+.main-content {
+  min-height: calc(100vh - 180px);
+}
+
+/* Force dropdown to show above everything */
+.dropdown-menu {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+/* Remove overflow restrictions */
+.card,
+.card-body {
+  overflow: visible !important;
+}
+
+.table {
+  overflow: visible !important;
+}
