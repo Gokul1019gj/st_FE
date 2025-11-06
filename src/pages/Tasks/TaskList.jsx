@@ -275,7 +275,7 @@ export default function TaskList() {
         </Card>
 
         {/* Pagination */}
-        <PaginationBar page={meta.page} pages={meta.pages} onChange={page} />
+        <PaginationBar page={meta.page || 1} pages={meta.pages || 5} onChange={page} />
 
         {/* Task Modal */}
         <TaskFormModal
