@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import AppNavbar from "../../components/AppNavbar";
 import Loader from "../../components/Loader";
 import TaskFormModal from "../../components/TaskFormModal";
@@ -142,7 +143,15 @@ export default function TaskList() {
                   <tbody>
                     {list.map((t) => (
                       <tr key={t.id}>
-                        <td className="fw-semibold">{t.title}</td>
+                        <td className="fw-semibold">
+                          {/* 🔹 Make the title clickable */}
+                          <Link
+                            to={`/tasks/${t.id}`}
+                            className="text-decoration-none text-primary"
+                          >
+                            {t.title}
+                          </Link>
+                        </td>
                         <td
                           className="text-truncate"
                           style={{ maxWidth: 320 }}

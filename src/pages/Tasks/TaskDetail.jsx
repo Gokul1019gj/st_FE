@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTaskById, updateTaskFull, setStatus } from "../../features/tasks/taskSlice";
+import { fetchTaskById, updateTaskFull } from "../../features/tasks/taskSlice";
 import { useParams, useNavigate } from "react-router-dom";
 import AppNavbar from "../../components/AppNavbar";
 import Loader from "../../components/Loader";
@@ -23,7 +23,7 @@ export default function TaskDetail(){
   if (!selected || !form) return (<><AppNavbar /><Container><Loader/></Container></>);
 
   const save=(e)=>{ e.preventDefault(); dispatch(updateTaskFull({ id:selected.id, payload:form })); }
-  const changeStatus=(s)=>dispatch(setStatus({ id:selected.id, status:s }));
+  // const changeStatus=(s)=>dispatch(setStatus({ id:selected.id, status:s }));
 
   return (
     <>
@@ -53,10 +53,10 @@ export default function TaskDetail(){
                 </Form.Group></Col>
               </Row>
               <div className="d-flex gap-2">
-                <Button type="submit">Save</Button>
+                {/* <Button type="submit">Save</Button> */}
                 <Button variant="outline-secondary" onClick={()=>navigate(-1)}>Back</Button>
-                <Button variant="outline-warning" onClick={()=>changeStatus("in-progress")}>Mark In-Progress</Button>
-                <Button variant="outline-success" onClick={()=>changeStatus("completed")}>Mark Completed</Button>
+                {/* <Button variant="outline-warning" onClick={()=>changeStatus("in-progress")}>Mark In-Progress</Button>
+                <Button variant="outline-success" onClick={()=>changeStatus("completed")}>Mark Completed</Button> */}
               </div>
             </Form>
           </Card.Body>
